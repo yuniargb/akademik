@@ -21,11 +21,19 @@
         <h3 class="panel-title">Input Mata Pelajaran</h3>
       </div>
       <div class="panel-body">
+
+        <?php
+        if ($this->session->flashdata('error')) {
+          echo '<div class="alert alert-danger">
+          ' . $this->session->flashdata('error') . '
+        </div>';
+        }
+        ?>
         <form action="<?php echo base_url() ?>index.php/mapel/insert" method="POST">
 
           <div class="form-group">
             <label for="id_tahun">ID mapel</label>
-            <input type="text" class="form-control" name="id_mapel" id="id_mapel" placeholder="id mapel">
+            <input type="text" class="form-control" name="id_mapel" id="id_mapel" value="<?php echo set_value('id_mapel'); ?>" placeholder="id mapel">
           </div>
 
           <div class="form-group">

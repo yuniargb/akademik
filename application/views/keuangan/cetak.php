@@ -95,7 +95,7 @@
     <div class="body">
         <div class="head">
             <img src="https://alhusnakotatangerang.com/wp-content/uploads/2018/11/Logo-Al-Husna.png" alt="" width="60" height="50" class="img-fluid">
-            <h1>AL-HUSNA</h1>
+            <h1>SMA AL-HUSNA KOTA TANGERANG</h1>
             <!-- <p>Jl. A. Damyati No.43-45, RT.6/RW.7, Sukarasa, Kec. Tangerang, Kota Tangerang, Banten 15111</p> -->
             <div class="kanan">
                 <h4>BUKTI PEMBAYARAN</h4>
@@ -121,6 +121,10 @@
                     <tr>
                         <th width="100">Tanggal Bayar</th>
                         <td width="350">: <?= date('d-m-Y', strtotime($cetak->tgl_bayar)) ?></td>
+                    </tr>
+                    <tr>
+                        <th width="100">Bulan</th>
+                        <td width="350">: <?= $cetak->pembayaran ?></td>
                     </tr>
                     <tr>
                         <th width="100">Jumlah Bayar</th>

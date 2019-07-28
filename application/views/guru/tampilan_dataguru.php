@@ -22,21 +22,23 @@
               <br>
 
 
-              <table id="sample-table-2" class="table table-striped table-bordered table-hover">
-                <tr>
-                  <th>Nip</th>
-                  <th>Nama </th>
-                  <th>Tempat lahir </th>
-                  <th>Tanggal lahir </th>
-                  <th>Alamat </th>
-                  <th>Jenis Kelamin </th>
-                  <th>Agama </th>
-                  <th>Jabatan </th>
-                  <th>No telpon </th>
-                  <th>email </th>
+              <table id="example" class="table table-striped table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>Nip</th>
+                    <th>Nama </th>
+                    <th>Tempat lahir </th>
+                    <th>Tanggal lahir </th>
+                    <th>Alamat </th>
+                    <th>Jenis Kelamin </th>
+                    <th>Agama </th>
+                    <th>Jabatan </th>
+                    <th>No telpon </th>
+                    <th>email </th>
 
-                  <th>Kelola </th>
-                </tr>
+                    <th>Kelola </th>
+                  </tr>
+                </thead>
 
                 <?php
 

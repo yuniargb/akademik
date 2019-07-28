@@ -23,6 +23,50 @@ class Keuangan_model extends CI_Model
         return $this->db->query($sql);
     }
 
+    public function cekBayar($nis)
+    {
+        $sql = "SELECT * FROM keuangan k
+        INNER JOIN siswa s ON k.nis=s.nis
+        INNER JOIN kelas t ON s.id_kelas=t.id_kelas
+        WHERE k.nis='" . $nis . "'";
+
+        return $this->db->query($sql);
+    }
+    public function cekTglBayar($nis, $bln)
+    {
+        $sql = "SELECT * FROM keuangan k
+        INNER JOIN siswa s ON k.nis=s.nis
+        INNER JOIN kelas t ON s.id_kelas=t.id_kelas
+        WHERE k.nis='" . $nis . "'
+        AND k.pembayaran = '" . $bln . "'";
+
+        $cek = $this->db->query($sql)->row();
+
+        if ($cek) {
+            $hasil = date('d-m-Y', strtotime($cek->tgl_bayar));
+        } else {
+            $hasil = "<p class='text-danger text-center'><b>-</b></p>";
+        }
+        return $hasil;
+    }
+    public function cekJmlBayar($nis, $bln)
+    {
+        $sql = "SELECT * FROM keuangan k
+        INNER JOIN siswa s ON k.nis=s.nis
+        INNER JOIN kelas t ON s.id_kelas=t.id_kelas
+        WHERE k.nis='" . $nis . "'
+        AND k.pembayaran = '" . $bln . "'";
+
+        $cek = $this->db->query($sql)->row();
+
+        if ($cek) {
+            $hasil = $cek->bayar;
+        } else {
+            $hasil = "<p class='text-danger'><b>Belum Bayar</b></p>";
+        }
+        return $hasil;
+    }
+
     public function kwitansi($id = null)
     {
         $sql = "SELECT * FROM keuangan k

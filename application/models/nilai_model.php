@@ -106,6 +106,19 @@ class Nilai_model extends CI_Model
         return $this->db->query($sql);
     }
 
+    public function cekNilai($id)
+    {
+        $sql = "SELECT *
+        FROM nilai n
+        INNER JOIN siswa s ON s.nis=n.nis
+        INNER JOIN kelas k ON s.id_kelas=k.id_kelas
+        INNER JOIN mapel m ON n.id_mapel=m.id_mapel
+        INNER JOIN guru g ON n.nip=g.nip
+        WHERE s.nis='" . $id . "'";
+
+        return $this->db->query($sql);
+    }
+
     public function update($data, $id)
     {
         $this->db->where('id_nilai', $id);

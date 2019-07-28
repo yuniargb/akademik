@@ -48,6 +48,7 @@ class User extends CI_Controller
 		);
 
 		if ($this->form_validation->run() == FALSE) {
+			$this->session->set_flashdata('error', 'Username Sudah pernah diinput');
 			return redirect('user/form_input');
 		} else {
 			//melakukkan insert data jurusan

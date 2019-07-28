@@ -125,4 +125,10 @@ class Siswa_model extends CI_Model
 
         return $this->db->query($sql);
     }
+
+    public function updatePassword($data, $where)
+    {
+        $this->db->where($where);
+        return $this->db->update($this->table, $data);
+    }
 }

@@ -50,6 +50,24 @@ class Jadwal_model extends CI_Model
 
 		return $this->db->query($sql);
 	}
+	public function jadwalSiswa($id)
+	{
+		$sql = "SELECT *
+		from jadwal
+		inner join tahun_akademik
+		ON tahun_akademik.id_tahun = jadwal.id_tahun
+		inner JOIN mapel
+		ON mapel.id_mapel = jadwal.id_mapel
+		INNER JOIN kelas
+		ON kelas.id_kelas=jadwal.kelas
+		INNER JOIN siswa
+		ON siswa.id_kelas=kelas.id_kelas
+		INNER JOIN guru
+		ON guru.nip=jadwal.nip
+		WHERE siswa.nis = '" . $id . "'";
+
+		return $this->db->query($sql);
+	}
 
 
 	public function insert($data)

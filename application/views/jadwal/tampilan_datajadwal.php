@@ -22,18 +22,20 @@
               <br>
 
 
-              <table id="example1" class="table table-striped table-bordered ">
-                <tr>
-                  <th>ID Jadwal</th>
-                  <th>Tahun Akademik</th>
-                  <th>Kelas</th>
-                  <th>Mata Pelajaran</th>
-                  <th>Nama guru</th>
-                  <th>Jam</th>
-                  <th>Ruangan</th>
-                  <th>Hari</th>
-                  <th>Kelola</th>
-                </tr>
+              <table id="example" class="table table-striped table-bordered ">
+                <thead>
+                  <tr>
+                    <th>ID Jadwal</th>
+                    <th>Tahun Akademik</th>
+                    <th>Kelas</th>
+                    <th>Mata Pelajaran</th>
+                    <th>Nama guru</th>
+                    <th>Jam</th>
+                    <th>Ruangan</th>
+                    <th>Hari</th>
+                    <th>Kelola</th>
+                  </tr>
+                </thead>
 
                 <?php
                 foreach ($jadwal as $value) {

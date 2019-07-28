@@ -57,6 +57,15 @@ class Nilai extends CI_Controller
         $this->load->view('template/footer');
     }
 
+    public function cekNilai()
+    {
+        $data['nilai'] = $this->nilai_model->cekNilai($this->session->userdata('nis'))->result();
+        $this->load->view('siswa_user/header');
+        $this->load->view('siswa_user/menu');
+        $this->load->view('nilai/ceknilai', $data);
+        $this->load->view('template/footer');
+    }
+
 
     public function cetak()
     {

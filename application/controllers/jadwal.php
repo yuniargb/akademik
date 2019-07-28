@@ -50,6 +50,15 @@ class Jadwal extends CI_Controller
 		$this->load->view('template/footer');
 	}
 
+	public function cekJadwal()
+	{
+		$data['j'] = $this->jadwal_model->jadwalSiswa($this->session->userdata('nis'))->result();
+		$this->load->view('siswa_user/header');
+		$this->load->view('siswa_user/menu');
+		$this->load->view('jadwal/cekjadwal', $data);
+		$this->load->view('template/footer');
+	}
+
 	public function insert()
 	{
 		$data = array(

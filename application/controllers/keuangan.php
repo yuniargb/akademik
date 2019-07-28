@@ -20,6 +20,16 @@ class Keuangan extends CI_Controller
 		$this->load->view('keuangan/tampilan_datakeuangan', $data);
 		$this->load->view('template/footer');
 	}
+	public function cekKeuangan()
+	{
+
+		$data['keuangan'] = $this->keuangan_model->cekBayar($this->session->userdata('nis'))->result();
+
+		$this->load->view('siswa_user/header', $data);
+		$this->load->view('siswa_user/menu', $data);
+		$this->load->view('keuangan/cekkeuangan', $data);
+		$this->load->view('template/footer');
+	}
 
 	public function form_input()
 	{
@@ -35,20 +45,12 @@ class Keuangan extends CI_Controller
 		$data = array(
 			'tgl_bayar' 	=> date('Y-m-d'),
 			'nis' => $this->input->post('nis'),
-			'bayar' => $this->input->post('bayar')
+			'bayar' => $this->input->post('bayar'),
+			'pembayaran' => $this->input->post('bayaran')
 		);
 		//melakukkan insert data jurusan
 		$this->keuangan_model->insert($data);
 		return redirect('keuangan');
-	}
-
-	public function edit($params = '')
-	{
-		$data['result'] = $this->keuangan_model->edit($params);
-		$this->load->view('keuangan/header', $data);
-		$this->load->view('keuangan/menu', $data);
-		$this->load->view('keuangan/edit', $data);
-		$this->load->view('keuangan/footer');
 	}
 
 

@@ -31,57 +31,59 @@
               <br>
 
 
-              <table id="example1" class="table table-striped table-bordered table-responsive">
-                <tr>
-                  <th>Nis</th>
-                  <th>Nama </th>
-                  <th>Alamat </th>
-                  <th>Tempat lahir </th>
-                  <th>Tanggal lahir </th>
-                  <th>Jenis Kelamin </th>
-                  <th>Agama </th>
-                  <th>email </th>
-                  <th>No telpon </th>
-                  <th>Golongan Darah </th>
-                  <!-- <th>Nama Ayah </th>
-                  <th>Nama Ibu </th> -->
-                  <th>Asal Sekolah </th>
-                  <th>Kelola </th>
-                </tr>
-
-                <?php
-
-                foreach ($siswa as $value) {
-
-                  ?>
+              <table id="example" class="table table-striped table-bordered">
+                <thead>
                   <tr>
-                    <td><?php echo $value['nis']; ?></td>
-                    <td><?php echo $value['nama_siswa']; ?></td>
-                    <td><?php echo $value['alamat']; ?></td>
-                    <td><?php echo $value['tempat_lahir']; ?></td>
-                    <td><?php echo $value['tanggal_lahir']; ?></td>
-                    <td><?php echo $value['jenis_kelamin']; ?></td>
-                    <td><?php echo $value['nama_agama']; ?></td>
-                    <td><?php echo $value['email']; ?></td>
-                    <td><?php echo $value['no_telpon']; ?></td>
-                    <td><?php echo $value['golongan_darah']; ?></td>
-                    <!-- <td><?php echo $value['nama_ayah']; ?></td>
-                        <td><?php echo $value['nama_ibu']; ?></td> -->
-                    <td><?php echo $value['asal_sekolah']; ?></td>
-                    <td>
-
-                      <a class="btn btn-warning" href="<?php echo base_url() ?>index.php/siswa/edit/<?php echo $value['nis'];  ?>">
-                        Edit</a>
-                      <a class="btn btn-danger" href="<?php echo base_url() ?>index.php/siswa/delete/<?php echo $value['nis']; ?>" onclick="return confirm('apa anda yakin');">
-                        Delete</a>
-
-                    </td>
+                    <th>Nis</th>
+                    <th>Nama </th>
+                    <th>Alamat </th>
+                    <th>Tempat lahir </th>
+                    <th>Tanggal lahir </th>
+                    <th>Jenis Kelamin </th>
+                    <th>Agama </th>
+                    <th>email </th>
+                    <th>No telpon </th>
+                    <th>Golongan Darah </th>
+                    <!-- <th>Nama Ayah </th>
+                  <th>Nama Ibu </th> -->
+                    <!-- <th>Asal Sekolah </th> -->
+                    <th>Kelola </th>
                   </tr>
+                </thead>
+                <tbody>
+                  <?php
 
-                <?php
-                }
-                ?>
+                  foreach ($siswa as $value) {
 
+                    ?>
+                    <tr>
+                      <td><?= $value['nis']; ?></td>
+                      <td><?= $value['nama_siswa']; ?></td>
+                      <td><?= $value['alamat']; ?></td>
+                      <td><?= $value['tempat_lahir']; ?></td>
+                      <td><?= $value['tanggal_lahir']; ?></td>
+                      <td><?= $value['jenis_kelamin']; ?></td>
+                      <td><?= $value['nama_agama']; ?></td>
+                      <td><?= $value['email']; ?></td>
+                      <td><?= $value['no_telpon']; ?></td>
+                      <td><?= $value['golongan_darah']; ?></td>
+                      <!-- <td><?php echo $value['nama_ayah']; ?></td>
+                                <td><?php echo $value['nama_ibu']; ?></td> -->
+                      <!-- <td><?php echo $value['asal_sekolah']; ?></td> -->
+                      <td>
+
+                        <a class="btn btn-warning" href="<?php echo base_url() ?>index.php/siswa/edit/<?php echo $value['nis'];  ?>">
+                          Edit</a>
+                        <a class="btn btn-danger" href="<?php echo base_url() ?>index.php/siswa/delete/<?php echo $value['nis']; ?>" onclick="return confirm('apa anda yakin');">
+                          Delete</a>
+
+                      </td>
+                    </tr>
+
+                  <?php
+                  }
+                  ?>
+                </tbody>
               </table>
   </section>
   <!-- /.content -->

@@ -39,6 +39,7 @@ class Guru extends CI_Controller
 
 	public function insert()
 	{
+		$this->form_validation->set_rules('nip', 'nip', 'required|is_unique[guru.nip]');
 		$data = array(
 			'nip'	 => $this->input->post('nip'),
 			'nama_guru' 	=> $this->input->post('nama'),
@@ -53,8 +54,14 @@ class Guru extends CI_Controller
 			'password' => md5($this->input->post('nip'))
 		);
 		//melakukkan insert data guru
-		$this->guru_model->insert($data);
-		return redirect('guru');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->session->set_flashdata('error', 'NIP Sudah pernah diinput');
+			return redirect('guru/form_input');
+		} else {
+			$this->guru_model->insert($data);
+			return redirect('guru');
+		}
 	}
 
 	public function edit($params = '')

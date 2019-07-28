@@ -19,6 +19,13 @@
                 <h3 class="panel-title">Input Guru</h3>
             </div>
             <div class="panel-body">
+                <?php
+                if ($this->session->flashdata('error')) {
+                    echo '<div class="alert alert-danger">
+                    ' . $this->session->flashdata('error') . '
+                    </div>';
+                }
+                ?>
                 <form action="<?php echo base_url() ?>index.php/guru/insert" method="POST">
 
                     <div class="form-group">

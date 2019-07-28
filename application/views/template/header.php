@@ -14,7 +14,7 @@ if (!$this->session->userdata('username')) {
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="<?php echo base_url('assets/assetss/bower_components/bootstrap/dist/css/bootstrap.min.css') ?>">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?php echo base_url('assets/assetss/bower_components/font-awesome/css/font-awesome.min.css') ?>">
   <!-- Ionicons -->
@@ -27,15 +27,17 @@ if (!$this->session->userdata('username')) {
   <!-- Morris chart -->
   <link rel="stylesheet" href="<?php echo base_url('assets/assetss/bower_components/morris.js/morris.css') ?>">
   <!-- jvectormap -->
-  <link rel="stylesheet" href="<?php echo base_url('assets/assetss/bower_components/jvectormap/jquery-jvectormap.css') ?>">
+  <!-- <link rel="stylesheet" href="<?php echo base_url('assets/assetss/bower_components/jvectormap/jquery-jvectormap.css') ?>"> -->
   <!-- Date Picker -->
-  <link rel="stylesheet" href="<?php echo base_url('assets/assetss/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') ?>">
+  <!-- <link rel="stylesheet" href="<?php echo base_url('assets/assetss/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') ?>"> -->
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="<?php echo base_url('assets/assetss/bower_components/bootstrap-daterangepicker/daterangepicker.css') ?>">
+  <!-- <link rel="stylesheet" href="<?php echo base_url('assets/assetss/bower_components/bootstrap-daterangepicker/daterangepicker.css') ?>"> -->
   <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="<?php echo base_url('assets/assetss/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') ?>">
+  <!-- <link rel="stylesheet" href="<?php echo base_url('assets/assetss/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') ?>"> -->
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" />
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>

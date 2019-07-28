@@ -46,6 +46,24 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label for="tahun_akademik">Untuk Bulan</label>
+                        <select name="bayaran" id="bayaran" class="form-control js-example-basic-single" required>
+                            <option value="">-- PILIH BULAN --</option>
+                            <option>Januari</option>
+                            <option>Februari</option>
+                            <option>Maret</option>
+                            <option>April</option>
+                            <option>Mei</option>
+                            <option>Juni</option>
+                            <option>Juli</option>
+                            <option>Agustus</option>
+                            <option>September</option>
+                            <option>Oktober</option>
+                            <option>November</option>
+                            <option>Desember</option>
+                        </select>
+                    </div>
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary btn-small">Simpan</button>
                     </div>

@@ -30,16 +30,19 @@
               <br>
               <br>
 
-              <table id="example1" class="table table-striped table-bordered ">
-                <tr>
-                  <th>ID Pembayaran</th>
-                  <th>Tanggal Pembayaran</th>
-                  <th>NIS</th>
-                  <th>Siswa</th>
-                  <th>Kelas</th>
-                  <th>Jumlah</th>
-                  <th class="text-center">Cetak</th>
-                </tr>
+              <table id="example" class="table table-striped table-bordered ">
+                <thead>
+                  <tr>
+                    <th>ID Pembayaran</th>
+                    <th>Tanggal Pembayaran</th>
+                    <th>NIS</th>
+                    <th>Siswa</th>
+                    <th>Kelas</th>
+                    <th>Bulan</th>
+                    <th>Jumlah</th>
+                    <th class="text-center">Cetak</th>
+                  </tr>
+                </thead>
 
                 <?php
                 foreach ($keuangan as $value) {
@@ -50,6 +53,7 @@
                     <td><?= $value->nis ?></td>
                     <td><?= $value->nama_siswa ?></td>
                     <td><?= $value->nama_kelas ?></td>
+                    <td><?= $value->pembayaran ?></td>
                     <td><?= $value->bayar ?></td>
                     <td class="text-center">
                       <a class="btn btn-primary" target="_blank" href="<?php echo base_url() ?>index.php/keuangan/cetak/<?= $value->id_keuangan  ?>">
