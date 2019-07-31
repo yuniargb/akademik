@@ -14,7 +14,7 @@ class Nilai_model extends CI_Model
 
     public function get_data($nip)
     {
-        $sql = "SELECT s.nis, s.nama_siswa, s.alamat,k.bayaran, s.tempat_lahir, s.tanggal_lahir, s.jenis_kelamin, s.agama, s.email, s.no_telpon, s.golongan_darah, s.nama_ayah, s.nama_ibu, s.asal_sekolah, a.nama_agama, k.nama_kelas
+        $sql = "SELECT *
         FROM siswa s
         INNER JOIN agama a ON s.agama=a.id_agama
         INNER JOIN kelas k ON s.id_kelas=k.id_kelas
@@ -36,9 +36,21 @@ class Nilai_model extends CI_Model
         FROM nilai n
         INNER JOIN siswa s ON s.nis=n.nis
         INNER JOIN kelas k ON s.id_kelas=k.id_kelas
-        INNER JOIN jadwal j ON j.kelas=k.id_kelas
         INNER JOIN mapel m ON n.id_mapel=m.id_mapel
-        WHERE j.nip='" . $nip . "'";
+        WHERE n.nip='" . $nip . "'";
+
+        return $this->db->query($sql);
+    }
+
+    public function laporan($kls)
+    {
+        $sql = "SELECT *
+        FROM nilai n
+        INNER JOIN siswa s ON s.nis=n.nis
+        INNER JOIN kelas k ON s.id_kelas=k.id_kelas
+        INNER JOIN mapel m ON n.id_mapel=m.id_mapel
+        WHERE k.id_kelas='" . $kls . "'
+        ORDER BY m.id_mapel";
 
         return $this->db->query($sql);
     }
@@ -63,7 +75,7 @@ class Nilai_model extends CI_Model
         INNER JOIN kelas k ON s.id_kelas=k.id_kelas
         INNER JOIN jadwal j ON j.kelas=k.id_kelas
         INNER JOIN mapel m ON n.id_mapel=m.id_mapel
-        WHERE j.nip='" . $nip . "'
+        WHERE n.nip='" . $nip . "'
         GROUP BY k.id_kelas";
 
         return $this->db->query($sql);

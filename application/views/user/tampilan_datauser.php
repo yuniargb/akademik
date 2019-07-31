@@ -36,6 +36,10 @@
                   <th>ID User</th>
                   <th>Username</th>
                   <th>Nama User</th>
+                  <th>Email</th>
+                  <th>Jenis Kelamin</th>
+                  <th>No Telepon</th>
+                  <th>Alamat</th>
                   <th>Level</th>
                   <th>Kelola</th>
                 </tr>
@@ -47,6 +51,10 @@
                     <td><?= $value->id_user ?></td>
                     <td><?= $value->username ?></td>
                     <td><?= $value->nama_user ?></td>
+                    <td><?= $value->email ?></td>
+                    <td><?= $value->jekel ?></td>
+                    <td><?= $value->notelp ?></td>
+                    <td><?= $value->alamat ?></td>
                     <td><?= $value->level ?></td>
                     <td>
                       <a class="btn btn-warning" href="<?= base_url() ?>index.php/user/edit/<?= $value->id_user  ?>">

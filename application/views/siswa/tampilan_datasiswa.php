@@ -36,6 +36,7 @@
                   <tr>
                     <th>Nis</th>
                     <th>Nama </th>
+                    <th>Kelas </th>
                     <th>Alamat </th>
                     <th>Tempat lahir </th>
                     <th>Tanggal lahir </th>
@@ -43,7 +44,7 @@
                     <th>Agama </th>
                     <th>email </th>
                     <th>No telpon </th>
-                    <th>Golongan Darah </th>
+                    <!-- <th>Golongan Darah </th> -->
                     <!-- <th>Nama Ayah </th>
                   <th>Nama Ibu </th> -->
                     <!-- <th>Asal Sekolah </th> -->
@@ -59,6 +60,7 @@
                     <tr>
                       <td><?= $value['nis']; ?></td>
                       <td><?= $value['nama_siswa']; ?></td>
+                      <td><?= $value['nama_kelas']; ?></td>
                       <td><?= $value['alamat']; ?></td>
                       <td><?= $value['tempat_lahir']; ?></td>
                       <td><?= $value['tanggal_lahir']; ?></td>
@@ -66,9 +68,9 @@
                       <td><?= $value['nama_agama']; ?></td>
                       <td><?= $value['email']; ?></td>
                       <td><?= $value['no_telpon']; ?></td>
-                      <td><?= $value['golongan_darah']; ?></td>
+                      <!-- <td><?= $value['golongan_darah']; ?></td> -->
                       <!-- <td><?php echo $value['nama_ayah']; ?></td>
-                                <td><?php echo $value['nama_ibu']; ?></td> -->
+                                      <td><?php echo $value['nama_ibu']; ?></td> -->
                       <!-- <td><?php echo $value['asal_sekolah']; ?></td> -->
                       <td>
 

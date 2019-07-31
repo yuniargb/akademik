@@ -118,7 +118,7 @@
                         <th width="100">Kelas</th>
                         <td width="350">: <?= $cetak->nama_kelas ?></td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <th width="100">Tanggal Bayar</th>
                         <td width="350">: <?= date('d-m-Y', strtotime($cetak->tgl_bayar)) ?></td>
                     </tr>
@@ -129,39 +129,52 @@
                     <tr>
                         <th width="100">Jumlah Bayar</th>
                         <td width="150">: Rp. <?= number_format($cetak->bayar, 0, ",", ".") ?></td>
+                    </tr> -->
+                </table>
+                <p>Telah melakukan pembayaran pada tanggal <?= date('d-m-Y', strtotime($cetak->tgl_bayar)) ?> untuk bulan <?= $cetak->pembayaran ?> sebesar Rp. <?= number_format($cetak->bayar, 0, ",", ".") ?></p>
+            </div>
+            <?php
+            if ($this->session->userdata('nis')) {
+                ?>
+                <div class="kpd">
+                    <i><b>Dokumen ini tidak memerlukan tanda tangan karena di cetak secara komputerisasi</b></i>
+                </div>
+            <?php
+            } else {
+                ?>
+                <div class="kpd">
+                    <p>Silahkan tanda tangan dibawah ini</p>
+                </div>
+                <table align="center">
+                    <tr>
+                        <td width="150">
+                            <div class="isi" style="margin-right: 20px;">
+                                <div class="ttdttds">
+                                    Penerima
+                                </div>
+                                <div class="petugas">
+
+                                </div>
+                            </div>
+                        </td>
+                        <td width="150">
+                            <div class="isi" style="margin-left: 20px;">
+                                <div class="ttdttd">
+                                    Staf Keuangan
+                                </div>
+                                <div class="petugas">
+                                    <?= $this->session->userdata('nama'); ?>
+                                </div>
+                                <div class="nip">
+                                    <!-- <b>NIP : <?= $personal->nip ?> </b> -->
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                 </table>
-            </div>
-            <div class="kpd">
-                <p>Dicetak dan diterima oleh.</p>
-            </div>
-            <table align="center">
-                <tr>
-                    <td width="150">
-                        <div class="isi" style="margin-right: 20px;">
-                            <div class="ttdttds">
-                                Penerima
-                            </div>
-                            <div class="petugas">
-
-                            </div>
-                        </div>
-                    </td>
-                    <td width="150">
-                        <div class="isi" style="margin-left: 20px;">
-                            <div class="ttdttd">
-                                Staf Keuangan
-                            </div>
-                            <div class="petugas">
-                                <?= $this->session->userdata('nama'); ?>
-                            </div>
-                            <div class="nip">
-                                <!-- <b>NIP : <?= $personal->nip ?> </b> -->
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </table>
+            <?php
+            }
+            ?>
         </div>
     </div>
 </body>

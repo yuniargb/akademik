@@ -14,7 +14,8 @@
     <!-- /.search form -->
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
-
+      <li><a href="<?php echo base_url(); ?>index.php/user/profile"><i class="fa fa-user"></i> Profile</a>
+      </li>
 
 
       <!-- <li class="treeview">
@@ -77,9 +78,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Laporan Keuangan</a></li>
-            <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Laporan Jadwal</a></li>
-            <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Laporan Nilai</a></li>
+            <li><a href="<?= base_url(); ?>index.php/laporan/periode/"><i class="fa fa-circle-o"></i> Laporan Keuangan</a></li>
+            <li><a href="<?= base_url(); ?>index.php/laporan/kelas/"><i class="fa fa-circle-o"></i> Laporan Nilai</a></li>
+            <!-- <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Laporan Nilai</a></li> -->
           </ul>
         </li>
       <?php

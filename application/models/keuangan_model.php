@@ -11,14 +11,20 @@ class Keuangan_model extends CI_Model
         parent::__construct();
     }
 
-    public function index()
-    { }
-
     public function get_data()
     {
         $sql = "SELECT * FROM keuangan k
         INNER JOIN siswa s ON k.nis=s.nis
         INNER JOIN kelas t ON s.id_kelas=t.id_kelas";
+
+        return $this->db->query($sql);
+    }
+    public function laporan($awal, $akhir)
+    {
+        $sql = "SELECT * FROM keuangan k
+        INNER JOIN siswa s ON k.nis=s.nis
+        INNER JOIN kelas t ON s.id_kelas=t.id_kelas
+        WHERE k.tgl_bayar BETWEEN '" . $awal . "' AND '" . $akhir . "'";
 
         return $this->db->query($sql);
     }
@@ -63,6 +69,25 @@ class Keuangan_model extends CI_Model
             $hasil = $cek->bayar;
         } else {
             $hasil = "<p class='text-danger'><b>Belum Bayar</b></p>";
+        }
+        return $hasil;
+    }
+
+    public function cetakKwitansi($nis, $bln)
+    {
+        $sql = "SELECT * FROM keuangan k
+        INNER JOIN siswa s ON k.nis=s.nis
+        INNER JOIN kelas t ON s.id_kelas=t.id_kelas
+        WHERE k.nis='" . $nis . "'
+        AND k.pembayaran = '" . $bln . "'";
+
+        $cek = $this->db->query($sql)->row();
+
+        if ($cek) {
+            $hasil = '<a class="btn btn-primary" target="_blank" href="' . base_url() . 'index.php/keuangan/cetak/' . $cek->id_keuangan . '">
+                        Cetak Kwitansi</a>';
+        } else {
+            $hasil = "<p class='text-danger text-center'><b>-</b></p>";
         }
         return $hasil;
     }

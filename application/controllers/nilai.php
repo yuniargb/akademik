@@ -40,7 +40,9 @@ class Nilai extends CI_Controller
         $data = array(
             'nis' => $this->input->post('nis'),
             'nip' => $this->session->userdata('nip'),
-            'nilai' => $this->input->post('nilai'),
+            'konigtif' => $this->input->post('konigtif'),
+            'psikomotor' => $this->input->post('psikomotor'),
+            'afektif' => $this->input->post('afektif'),
             'id_mapel' => $this->input->post('mapel')
         );
         //melakukkan insert data jurusan
@@ -64,6 +66,23 @@ class Nilai extends CI_Controller
         $this->load->view('siswa_user/menu');
         $this->load->view('nilai/ceknilai', $data);
         $this->load->view('template/footer');
+    }
+    public function nilaiSiswa()
+    {
+
+        ob_start();
+        $tanggal = date('d-m-Y');
+        $nilai =  $this->nilai_model->cekNilai($this->session->userdata('nis'));
+        $data['nilai'] = $nilai->result();
+        $data['rows'] = $nilai->row();
+        $this->load->view('nilai/cetaks', $data);
+        $html = ob_get_contents();
+        ob_end_clean();
+
+        require_once('./assets/html2pdf/html2pdf.class.php');
+        $pdf = new HTML2PDF('P', 'A4', 'en');
+        $pdf->WriteHTML($html);
+        $pdf->Output('nilai-' . $tanggal . '.pdf');
     }
 
 
@@ -93,7 +112,9 @@ class Nilai extends CI_Controller
     public function update()
     {
         $data = array(
-            'nilai'     => $this->input->post('nilai'),
+            'konigtif'     => $this->input->post('konigtif'),
+            'psikomotor'     => $this->input->post('psikomotor'),
+            'afektif'     => $this->input->post('afektif'),
         );
         $this->nilai_model->update($data, $this->input->post('id'));
         return redirect('nilai');

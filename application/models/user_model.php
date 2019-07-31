@@ -23,6 +23,14 @@ class User_model extends CI_Model
         return $query;
     }
 
+    public function get_profil($user)
+    {
+        $sql = "SELECT * FROM tbuser WHERE username='" . $user . "'";
+
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
     public function insert($data)
     {
         $this->db->insert($this->table, $data);

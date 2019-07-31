@@ -114,67 +114,50 @@
     <div class="body">
         <div class="head">
             <img src="https://alhusnakotatangerang.com/wp-content/uploads/2018/11/Logo-Al-Husna.png" alt="" width="120" height="100" class="img-fluid">
-            <h2>NILAI SISWA</h2>
+            <h2>LAPORAN NILAI</h2>
             <h2>SMA Al-Husna Tangerang</h2>
             <p>Jl. A. Damyati No.43-45, RT.6/RW.7, Sukarasa, Kec. Tangerang, Kota Tangerang, Banten 15111</p>
         </div>
-        <div class="container">
-            <table style=" width: 1000px;">
+        <table class="table-custom" align="center" style="width: 1000px;">
+            <tr>
+                <!-- <th>ID Nilai</th> -->
+                <th>NIS</th>
+                <th>Siswa</th>
+                <th>Kelas</th>
+                <th>Mata Pelajaran</th>
+                <!-- <th>Kelas</th> -->
+                <th class="text-center">Konigtif</th>
+                <th class="text-center">Psikomotor</th>
+                <th class="text-center">Afektif</th>
+                <!-- <th class="text-center">Kelola</th> -->
+            </tr>
 
+            <?php
+            foreach ($cetak as $value) {
+                ?>
                 <tr>
-                    <th>NIP</th>
-                    <td>: <?= $rows->nip ?></td>
+                    <td><?= $value->nis ?></td>
+                    <td><?= $value->nama_siswa ?></td>
+                    <td><?= $value->nama_kelas ?></td>
+                    <td><?= $value->nama_mapel ?></td>
+                    <td align="center"><?= $value->konigtif ?></td>
+                    <td align="center"><?= $value->psikomotor ?></td>
+                    <td align="center"><?= $value->afektif ?></td>
                 </tr>
-                <tr>
-                    <th>Guru</th>
-                    <td>: <?= $rows->nama_guru ?></td>
-                </tr>
-                <tr>
-                    <th>Kelas</th>
-                    <td>: <?= $rows->nama_kelas ?></td>
-                </tr>
-                <tr>
-                    <th>Mata Pelajaran</th>
-                    <td>: <?= $rows->nama_mapel ?></td>
-                </tr>
-            </table>
-            <table class="table-custom" style="width: 1000px;">
-                <thead>
-                    <tr>
-                        <th align="center" width="20">NO</th>
-                        <th align="center" width="100">NIS</th>
-                        <th align=" center" width="100">afektif</th>
-                        <th align="center" width="90">Konigtif</th>
-                        <th align="center" width="90">Psikomotor</th>
-                        <th align="center" width="90">Afektif</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    $no = 1;
-                    foreach ($result as $p) :
-                        ?>
-                        <tr>
-                            <td align=" center"><?= $no ?></td>
-                            <td align=" center"><?= $p->nis ?></td>
-                            <td><?= $p->nama_siswa ?></td>
-                            <td align="center"><?= $p->konigtif ?></td>
-                            <td align="center"><?= $p->psikomotor ?></td>
-                            <td align="center"><?= $p->afektif ?></td>
-                        </tr>
-                        <?php $no++;
-                    endforeach ?>
-                </tbody>
-            </table>
-            <div class="isi">
-                <div class="ttdttd">
-                    Guru
-                </div>
-                <div class="nama">
-                    <b><?= $rows->nama_guru ?></b>
-                </div>
+
+            <?php
+            }
+            ?>
+        </table>
+        <div class="isi">
+            <div class="ttdttd">
+                Kepala Sekolah
+            </div>
+            <div class="nama">
+                <b>Yuniar Giffari Bachri S.Kom</b>
             </div>
         </div>
+
 
 
     </div>

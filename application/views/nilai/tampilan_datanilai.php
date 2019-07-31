@@ -69,7 +69,9 @@
                   <th>NIS</th>
                   <th>Siswa</th>
                   <th>Kelas</th>
-                  <th>Nilai</th>
+                  <th>Konigtif</th>
+                  <th>Psikomotor</th>
+                  <th>Afektif</th>
                   <th class="text-center">Kelola</th>
                 </tr>
 
@@ -82,7 +84,9 @@
                     <td><?= $value->nis ?></td>
                     <td><?= $value->nama_siswa ?></td>
                     <td><?= $value->nama_kelas ?></td>
-                    <td><?= $value->nilai ?></td>
+                    <td><?= $value->konigtif ?></td>
+                    <td><?= $value->psikomotor ?></td>
+                    <td><?= $value->afektif ?></td>
                     <td class="text-center">
                       <a class="btn btn-warning" href="<?php echo base_url() ?>index.php/nilai/edit/<?= $value->id_nilai  ?>">
                         Edit</a>

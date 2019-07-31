@@ -34,6 +34,23 @@ class Jadwal_model extends CI_Model
 			return array();
 		}
 	}
+	public function laporan($id)
+	{
+		$sql = "SELECT jadwal.id_jadwal, tahun_akademik.tahun_akademik, kelas.nama_kelas as kelas,
+	 mapel.nama_mapel, guru.nama_guru as nip, jadwal.jam, jadwal.ruangan, jadwal.hari
+		from jadwal
+		inner join tahun_akademik
+		ON tahun_akademik.id_tahun = jadwal.id_tahun
+		inner JOIN mapel
+		ON mapel.id_mapel = jadwal.id_mapel
+		INNER JOIN kelas
+		ON kelas.id_kelas=jadwal.kelas
+		INNER JOIN guru
+		ON guru.nip=jadwal.nip
+		WHERE jadwal.kelas='" . $id . "'";
+
+		return $this->db->query($sql);
+	}
 	public function get_edit($id)
 	{
 		$sql = "SELECT *

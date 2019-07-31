@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 28, 2019 at 08:28 PM
+-- Generation Time: Jul 31, 2019 at 06:47 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -67,7 +67,8 @@ CREATE TABLE `guru` (
 
 INSERT INTO `guru` (`nip`, `nama_guru`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `jenis_kelamin`, `id_agama`, `jabatan`, `no_telp`, `email`, `password`) VALUES
 ('1234567', 'Yuniar giffari Bachri', 'Tangerang', '2019-07-26', 'Kyaimaja', 'laki-laki', '123', 'WAKASEK', '8855455', 'fia@gmail.com', '4f46e6bb6c822c2a9e9c7a9b4d6c48aa'),
-('1234568', 'Lutfia', 'Tangerang', '2019-07-27', 'Kyaimaja', 'laki-laki', '123', 'WAKASEK', '8855455', 'agiffals@yahoo.com', 'fe743d8d97aa7dfc6c93ccdc2e749513');
+('1234568', 'Lutfia', 'Tangerang', '2019-07-27', 'Kyaimaja', 'laki-laki', '123', 'WAKASEK', '8855455', 'agiffals@yahoo.com', 'fe743d8d97aa7dfc6c93ccdc2e749513'),
+('1504030043', 'dede', 'Tangerang', '2021-02-03', 'Kyaimajagggggggggggg', 'laki-laki', '123', 'admin', '67890', 'dedefghj@gmail.com', '1540ee12b2229cf2780fb89aa09658fa');
 
 -- --------------------------------------------------------
 
@@ -93,7 +94,9 @@ CREATE TABLE `jadwal` (
 INSERT INTO `jadwal` (`id_jadwal`, `id_tahun`, `kelas`, `id_mapel`, `nip`, `jam`, `ruangan`, `hari`) VALUES
 (4, 2, '3', 'b.ing', '1234567', '19.00-06-00', 'xi', 'Selasa'),
 (5, 1, '3', '1', '1234568', '19.00-06-00', 'xi', 'Sabtu'),
-(6, 1, '2', 'b.indo', '1234567', '19.00-06-00', 'xi', 'Senin');
+(6, 1, '2', 'b.indo', '1234567', '19.00-06-00', 'xi', 'Senin'),
+(7, 2, '3', 'b.ing', '1504030043', '12.00-11.00', 'x', 'Selasa'),
+(8, 1, '3', 'b.indo', '1504030043', '12.00-11.00', 'xi', 'Senin');
 
 -- --------------------------------------------------------
 
@@ -113,8 +116,8 @@ CREATE TABLE `jurusan` (
 INSERT INTO `jurusan` (`id_jurusan`, `nama_jurusan`) VALUES
 (1, 'ilmu  pengetahuan alamasd'),
 (2, 'ilmu pengetahuan sosials'),
-(3, 'apa '),
-(4, 'asdasd');
+(4, 'asdasd'),
+(5, 'ppk');
 
 -- --------------------------------------------------------
 
@@ -161,7 +164,8 @@ INSERT INTO `keuangan` (`id_keuangan`, `nis`, `bayar`, `tgl_bayar`, `pembayaran`
 (2, 1000001, 900000, '2019-07-27', 'Juli'),
 (3, 1000001, 900000, '2019-07-27', 'Agustus'),
 (4, 1000002, 1000000, '2019-07-27', 'Januari'),
-(5, 1000002, 1000000, '2019-07-27', 'April');
+(5, 1000002, 1000000, '2019-07-27', 'April'),
+(6, 1504030044, 900000, '2019-07-30', 'Januari');
 
 -- --------------------------------------------------------
 
@@ -196,15 +200,19 @@ CREATE TABLE `nilai` (
   `nis` int(12) NOT NULL,
   `id_mapel` varchar(12) NOT NULL,
   `nip` varchar(12) NOT NULL,
-  `nilai` int(15) NOT NULL
+  `konigtif` int(15) NOT NULL,
+  `psikomotor` int(11) NOT NULL,
+  `afektif` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `nilai`
 --
 
-INSERT INTO `nilai` (`id_nilai`, `nis`, `id_mapel`, `nip`, `nilai`) VALUES
-(3, 1000002, 'b.indo', '1234567', 100);
+INSERT INTO `nilai` (`id_nilai`, `nis`, `id_mapel`, `nip`, `konigtif`, `psikomotor`, `afektif`) VALUES
+(4, 1000001, 'b.indo', '1234567', 30, 20, 10),
+(5, 1504030044, 'b.ing', '1504030043', 10, 20, 10),
+(6, 1504030044, 'b.indo', '1504030043', 30, 20, 10);
 
 -- --------------------------------------------------------
 
@@ -259,7 +267,8 @@ INSERT INTO `siswa` (`nis`, `password`, `nama_siswa`, `alamat`, `tempat_lahir`, 
 (123123, '4297f44b13955235245b2497399d7a93', 'Yuniar giffari Bachri', 'asdasd', 'Tangerang', '2019-07-08', 'perempuan', '2', 'fia@gmail.com', '8855455', 'O', '23', '123', 'tangerang', 0),
 (1000001, '59e711d152de7bec7304a8c2ecaf9f0f', 'Bachri Y', 'tangerang', 'Tangerang', '2019-07-25', 'perempuan', '123', 'agiffals@yahoo.com', '123123', 'AB', 'sjaiful', 'sumiati', 'sman 4 tangerang', 3),
 (1000002, '4f46e6bb6c822c2a9e9c7a9b4d6c48aa', 'Yuniar giffari Bachri', 'tangerang', 'Tangerang', '2019-07-25', 'laki-laki', '123', 'agiffals@yahoo.com', '8855455', 'AB', 'sjaiful', 'sumiati', 'sman 4 tangerang', 2),
-(1000004, 'f68ec4f0c6df90137749af75a929a3eb', 'Yuniar giffari Bachris', 'Kyaimaja', 'Tangerang', '2019-07-27', 'laki-laki', '124', 'whyhertanto97@gmail.', '8855455', 'O', '23', 'sumiati', 'sman 4 tangerang', 2);
+(1000004, 'f68ec4f0c6df90137749af75a929a3eb', 'Yuniar giffari Bachris', 'Kyaimaja', 'Tangerang', '2019-07-27', 'laki-laki', '124', 'whyhertanto97@gmail.', '8855455', 'O', '23', 'sumiati', 'sman 4 tangerang', 2),
+(1504030044, '8070b0b01d9042fdbc54f095bd2832ef', 'Elisa', 'asd', 'Tangerang', '2021-03-29', 'perempuan', '123', 'elisadian05@gmail.com', '09876', 'AB', 'aaa', 'sss', 'smkn 7tangerang', 3);
 
 -- --------------------------------------------------------
 
@@ -293,17 +302,23 @@ CREATE TABLE `tbuser` (
   `username` varchar(20) NOT NULL,
   `nama_user` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `level` enum('admin','guru','siswa','keuangan','kepalasekolah') NOT NULL
+  `level` enum('admin','guru','siswa','keuangan','kepalasekolah') NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `notelp` varchar(15) NOT NULL,
+  `jekel` varchar(15) NOT NULL,
+  `alamat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbuser`
 --
 
-INSERT INTO `tbuser` (`id_user`, `username`, `nama_user`, `password`, `level`) VALUES
-(9, 'yuniargb', 'Yuniar Giffari Bachri', 'a5f8698c7c778063ddb7a188fea74b14', 'keuangan'),
-(10, 'bachriy', 'agif', '4f46e6bb6c822c2a9e9c7a9b4d6c48aa', 'admin'),
-(11, 'lutfia', 'lutfia', 'a944d3aada843aeb93e11b9b92f5ad5a', 'kepalasekolah');
+INSERT INTO `tbuser` (`id_user`, `username`, `nama_user`, `password`, `level`, `email`, `notelp`, `jekel`, `alamat`) VALUES
+(9, 'yuniargb', 'Yuniar Giffari Bachri', 'a5f8698c7c778063ddb7a188fea74b14', 'keuangan', '', '', '', ''),
+(10, 'bachriy', 'agif', '4f46e6bb6c822c2a9e9c7a9b4d6c48aa', 'admin', '', '', '', ''),
+(11, 'lutfia', 'lutfia', 'a944d3aada843aeb93e11b9b92f5ad5a', 'kepalasekolah', '', '', '', ''),
+(12, 'elisa', 'elislis05', '8070b0b01d9042fdbc54f095bd2832ef', 'admin', '', '', '', ''),
+(13, 'ygbachri', 'agif', 'a4ffd4a5b8174ee3a1aeefffdd761acc', 'admin', 'basdachriy@gmail.com', '12344123124', 'laki-laki', 'asdfagfasdsa');
 
 --
 -- Indexes for dumped tables
@@ -395,13 +410,13 @@ ALTER TABLE `agama`
 -- AUTO_INCREMENT for table `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `jurusan`
 --
 ALTER TABLE `jurusan`
-  MODIFY `id_jurusan` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_jurusan` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `kelas`
@@ -413,19 +428,19 @@ ALTER TABLE `kelas`
 -- AUTO_INCREMENT for table `keuangan`
 --
 ALTER TABLE `keuangan`
-  MODIFY `id_keuangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_keuangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `nilai`
 --
 ALTER TABLE `nilai`
-  MODIFY `id_nilai` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_nilai` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `nis` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000005;
+  MODIFY `nis` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1504030045;
 
 --
 -- AUTO_INCREMENT for table `tahun_akademik`
@@ -437,7 +452,7 @@ ALTER TABLE `tahun_akademik`
 -- AUTO_INCREMENT for table `tbuser`
 --
 ALTER TABLE `tbuser`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

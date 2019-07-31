@@ -24,7 +24,7 @@
                 <div class="box-body">
                     <div class="row" style="margin-bottom: 20px">
                         <div class="col-md-12">
-
+                            <a href="<?php echo base_url() ?>index.php/nilai/nilaisiswa" target="_blank" class="btn btn-primary btn-small"> Cetak Nilai </a>
                             <!-- <a href="<?php echo base_url() ?>index.php/nilai/form_input" class="btn btn-primary btn-small"> Tambah data </a>
                             <br>
                             <br>
@@ -41,7 +41,7 @@
                                             <select name="kelas" id="kelas" class="form-control" required>
                                                 <option value="">-- PILIH KELAS --</option>
                                                 <?php foreach ($kelas as $t) { ?>
-                                                                                                                            <option value="<?= $t->id_kelas ?>"><?= $t->nama_kelas ?></option>
+                                                                                                                                                                    <option value="<?= $t->id_kelas ?>"><?= $t->nama_kelas ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
@@ -50,7 +50,7 @@
                                             <select name="mapel" id="mapel" class="form-control" required>
                                                 <option value="">-- PILIH MATA PELAJARAN --</option>
                                                 <?php foreach ($mapel as $t) { ?>
-                                                                                                                            <option value="<?= $t['id_mapel'] ?>"><?= $t['nama_mapel'] ?></option>
+                                                                                                                                                                    <option value="<?= $t['id_mapel'] ?>"><?= $t['nama_mapel'] ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
@@ -69,7 +69,9 @@
                                     <th>Siswa</th> -->
                                     <th>Mata Pelajaran</th>
                                     <!-- <th>Kelas</th> -->
-                                    <th class="text-center">Nilai</th>
+                                    <th class="text-center">Konigtif</th>
+                                    <th class="text-center">Psikomotor</th>
+                                    <th class="text-center">Afektif</th>
                                     <!-- <th class="text-center">Kelola</th> -->
                                 </tr>
 
@@ -77,18 +79,10 @@
                                 foreach ($nilai as $value) {
                                     ?>
                                     <tr>
-                                        <!-- <td><?= $value->id_nilai ?></td> -->
-                                        <!-- <td><?= $value->nis ?></td>
-                                                                        <td><?= $value->nama_siswa ?></td> -->
                                         <td><?= $value->nama_mapel ?></td>
-                                        <!-- <td><?= $value->nama_kelas ?></td> -->
-                                        <td align="center"><?= $value->nilai ?></td>
-                                        <!-- <td class="text-center">
-                                                                                <a class="btn btn-warning" href="<?php echo base_url() ?>index.php/nilai/edit/<?= $value->id_nilai  ?>">
-                                                                                    Edit</a>
-                                                                                <a class="btn btn-danger" href="<?php echo base_url() ?>index.php/nilai/delete/<?= $value->id_nilai  ?>" onclick="return confirm('apa anda yakin');">
-                                                                                    Hapus</a>
-                                                                            </td> -->
+                                        <td align="center"><?= $value->konigtif ?></td>
+                                        <td align="center"><?= $value->psikomotor ?></td>
+                                        <td align="center"><?= $value->afektif ?></td>
                                     </tr>
 
                                 <?php

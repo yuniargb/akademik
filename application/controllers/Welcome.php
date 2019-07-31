@@ -28,27 +28,21 @@ class Welcome extends CI_Controller
 		if (isset($_POST['login'])) {
 			$user = $this->input->post('user', true);
 			$pass = md5($this->input->post('pass', true));
-			$cek = $this->app_model->proseslogin($user, $pass);
-			$hasil = count($cek);
 
-			if ($hasil > 0) {
+			// login admin
+			$cek = $this->app_model->proseslogin($user, $pass);
+			$row = count($cek);
+			// login guru
+			$guru = $this->app_model->prosesloginguru($user, $pass);
+			$row1 = count($guru);
+			// login siswa
+			$siswa = $this->app_model->prosesloginsiswa($user, $pass);
+			$row2 = count($siswa);
+
+			if ($row > 0) {
 				$datalogin = $this->db->get_where('tbuser', array('username' => $user, 'password' => $pass))->row();
 				$data['id_user'] = $datalogin->id_user;
 				$data['username'] = $datalogin->username;
-
-				// if ($datalogin->level == 'admin') {
-				// 	$this->session->set_userdata($data);
-				// 	redirect('welcome/vadmin');
-				// } elseif ($datalogin->level == 'guru') {
-				// 	$this->session->set_userdata($data);
-				// 	redirect('welcome/vguru');
-				// } elseif ($datalogin->level == 'siswa') {
-				// 	$this->session->set_userdata($data);
-				// 	redirect('welcome/vsiswa');
-				// } elseif ($datalogin->level == 'keuangan') {
-				// 	$this->session->set_userdata($data);
-				// 	redirect('welcome/vkeuangan');
-				// }
 
 				$data_session = array(
 					'username' => $datalogin->username,
@@ -57,21 +51,7 @@ class Welcome extends CI_Controller
 				);
 				$this->session->set_userdata($data_session);
 				redirect('welcome/vadmin');
-			} else {
-				redirect('welcome/index');
-			}
-		}
-	}
-
-	public function cekloginguru()
-	{
-		if (isset($_POST['login'])) {
-			$user = $this->input->post('user', true);
-			$pass = md5($this->input->post('pass', true));
-			$cek = $this->app_model->prosesloginguru($user, $pass);
-			$hasil = count($cek);
-
-			if ($hasil > 0) {
+			} elseif ($row1 > 0) {
 				$datalogin = $this->db->get_where('guru', array('nip' => $user, 'password' => $pass))->row();
 
 				$data_session = array(
@@ -80,21 +60,7 @@ class Welcome extends CI_Controller
 				);
 				$this->session->set_userdata($data_session);
 				redirect('welcome/vguru');
-			} else {
-				redirect('welcome/loginguru');
-			}
-		}
-	}
-
-	public function cekloginsiswa()
-	{
-		if (isset($_POST['login'])) {
-			$user = $this->input->post('user', true);
-			$pass = md5($this->input->post('pass', true));
-			$cek = $this->app_model->prosesloginsiswa($user, $pass);
-			$hasil = count($cek);
-
-			if ($hasil > 0) {
+			} elseif ($row2 > 0) {
 				$datalogin = $this->db->get_where('siswa', array('nis' => $user, 'password' => $pass))->row();
 
 				$data_session = array(
@@ -104,10 +70,56 @@ class Welcome extends CI_Controller
 				$this->session->set_userdata($data_session);
 				redirect('welcome/vsiswa');
 			} else {
-				redirect('welcome/loginsiswa');
+				redirect('welcome/index');
 			}
 		}
 	}
+
+	// public function cekloginguru()
+	// {
+	// 	if (isset($_POST['login'])) {
+	// 		$user = $this->input->post('user', true);
+	// 		$pass = md5($this->input->post('pass', true));
+	// 		$cek = $this->app_model->prosesloginguru($user, $pass);
+	// 		$hasil = count($cek);
+
+	// 		if ($hasil > 0) {
+	// 			$datalogin = $this->db->get_where('guru', array('nip' => $user, 'password' => $pass))->row();
+
+	// 			$data_session = array(
+	// 				'nip' => $datalogin->nip,
+	// 				'nama' => $datalogin->nama_guru
+	// 			);
+	// 			$this->session->set_userdata($data_session);
+	// 			redirect('welcome/vguru');
+	// 		} else {
+	// 			redirect('welcome/loginguru');
+	// 		}
+	// 	}
+	// }
+
+	// public function cekloginsiswa()
+	// {
+	// 	if (isset($_POST['login'])) {
+	// 		$user = $this->input->post('user', true);
+	// 		$pass = md5($this->input->post('pass', true));
+	// 		$cek = $this->app_model->prosesloginsiswa($user, $pass);
+	// 		$hasil = count($cek);
+
+	// 		if ($hasil > 0) {
+	// 			$datalogin = $this->db->get_where('siswa', array('nis' => $user, 'password' => $pass))->row();
+
+	// 			$data_session = array(
+	// 				'nis' => $datalogin->nis,
+	// 				'nama' => $datalogin->nama_siswa
+	// 			);
+	// 			$this->session->set_userdata($data_session);
+	// 			redirect('welcome/vsiswa');
+	// 		} else {
+	// 			redirect('welcome/loginsiswa');
+	// 		}
+	// 	}
+	// }
 
 	public function login()
 	{

@@ -8,7 +8,7 @@
 	<!-- Bootstrap 3.3.7 -->
 	<!-- <link rel="stylesheet" href="<?php echo base_url('assets/assetss/bower_components/bootstrap/dist/css/bootstrap.min.css') ?>"> -->
 
-	<link href="<?php echo base_url('assets/css/style.css') ?>" rel="stylesheet">
+	<link href="<?php echo base_url('assets/css/style.css?v=1.1') ?>" rel="stylesheet">
 
 
 </head>

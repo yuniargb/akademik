@@ -20,6 +20,15 @@ class User extends CI_Controller
 		$this->load->view('template/footer');
 	}
 
+	public function profile()
+	{
+		$data['s'] = $this->user_model->get_profil($this->session->userdata('username'))->row();
+		$this->load->view('template/header', $data);
+		$this->load->view('template/tampilan_menu', $data);
+		$this->load->view('user/profile', $data);
+		$this->load->view('template/footer');
+	}
+
 	public function form_input()
 	{
 		$this->load->view('template/header');
@@ -44,7 +53,11 @@ class User extends CI_Controller
 			'nama_user' 	=> $this->input->post('nama_user'),
 			'username' 		=> $this->input->post('username'),
 			'password' 		=> md5($this->input->post('username')),
-			'level' 		=> $this->input->post('level')
+			'level' 		=> $this->input->post('level'),
+			'email' 		=> $this->input->post('email'),
+			'notelp' 		=> $this->input->post('no_telpon'),
+			'jekel' 		=> $this->input->post('jenis_kelamin'),
+			'alamat' 		=> $this->input->post('alamat')
 		);
 
 		if ($this->form_validation->run() == FALSE) {
@@ -71,7 +84,11 @@ class User extends CI_Controller
 	{
 		$data = array(
 			'nama_user' 	=> $this->input->post('nama_user'),
-			'level' 		=> $this->input->post('level')
+			'level' 		=> $this->input->post('level'),
+			'notelp' 		=> $this->input->post('no_telpon'),
+			'email' 		=> $this->input->post('email'),
+			'jekel' 		=> $this->input->post('jenis_kelamin'),
+			'alamat' 		=> $this->input->post('alamat')
 		);
 		$this->user_model->update($data, $this->input->post('id_user'));
 		return redirect('user');

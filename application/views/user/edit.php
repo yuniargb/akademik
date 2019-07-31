@@ -37,6 +37,11 @@
           </div>
 
           <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" id="email" value="<?= $user->email ?>" placeholder="Email">
+          </div>
+
+          <div class="form-group">
             <label for="tahun_akademik">Level</label>
             <select name="level" id="level" class="form-control" required>
               <option value="">--PILIH LEVEL--</option>
@@ -52,6 +57,31 @@
             </select>
           </div>
 
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="no_telpon">Nomor Telpon</label>
+              <input type="text" class="form-control" name="no_telpon" id="no_telpon" placeholder="Nomor Telpon" value="<?= $user->notelp ?>">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="nama_kelas">Jenis Kelamin</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="jenis_kelamin" id="laki-laki" value="laki-laki" <?php if ($user->jekel == "laki-laki") {
+                                                                                                                      echo "checked";
+                                                                                                                    } ?>>
+                <label class="form-check-label" for="laki-laki">Laki-Laki</label>
+                <input class="form-check-input" type="radio" name="jenis_kelamin" id="perempuan" value="perempuan" <?php if ($user->jekel == "perempuan") {
+                                                                                                                      echo "checked";
+                                                                                                                    } ?>>
+                <label class="form-check-label" for="perempuan">Perempuan</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="alamat">Alamat</label>
+            <textarea name="alamat" id="alamat" cols="10" rows="5" placeholder="Alamat" class="form-control"><?= $user->alamat ?></textarea>
+          </div>
 
           <div class="box-footer">
             <button type="submit" class="btn btn-primary btn-small">Simpan</button>

@@ -37,67 +37,80 @@
                                     <th>Kelas</th> -->
                                     <th>Bulan</th>
                                     <th>Jumlah</th>
+                                    <th>Cetak</th>
                                     <!-- <th class="text-center">Cetak</th> -->
                                 </tr>
                                 <tr>
                                     <td width="100"><?= $this->keuangan_model->cekTglBayar($this->session->userdata('nis'), 'Januari') ?></td>
                                     <td width="400">Januari</td>
                                     <td><?= $this->keuangan_model->cekJmlBayar($this->session->userdata('nis'), 'Januari') ?> </td>
+                                    <td><?= $this->keuangan_model->cetakKwitansi($this->session->userdata('nis'), 'Januari') ?> </td>
                                 </tr>
                                 <tr>
                                     <td width="100"><?= $this->keuangan_model->cekTglBayar($this->session->userdata('nis'), 'Februari') ?></td>
                                     <td width="400">Februari</td>
                                     <td><?= $this->keuangan_model->cekJmlBayar($this->session->userdata('nis'), 'Februari') ?> </td>
+                                    <td><?= $this->keuangan_model->cetakKwitansi($this->session->userdata('nis'), 'Februari') ?> </td>
                                 </tr>
                                 <tr>
                                     <td width="100"><?= $this->keuangan_model->cekTglBayar($this->session->userdata('nis'), 'Maret') ?></td>
                                     <td width="400">Maret</td>
                                     <td><?= $this->keuangan_model->cekJmlBayar($this->session->userdata('nis'), 'Maret') ?> </td>
+                                    <td><?= $this->keuangan_model->cetakKwitansi($this->session->userdata('nis'), 'Maret') ?> </td>
                                 </tr>
                                 <tr>
                                     <td width="100"><?= $this->keuangan_model->cekTglBayar($this->session->userdata('nis'), 'April') ?></td>
                                     <td width="400">April</td>
                                     <td><?= $this->keuangan_model->cekJmlBayar($this->session->userdata('nis'), 'April') ?> </td>
+                                    <td><?= $this->keuangan_model->cetakKwitansi($this->session->userdata('nis'), 'April') ?> </td>
                                 </tr>
                                 <tr>
                                     <td width="100"><?= $this->keuangan_model->cekTglBayar($this->session->userdata('nis'), 'Mei') ?></td>
                                     <td width="400">Mei</td>
                                     <td><?= $this->keuangan_model->cekJmlBayar($this->session->userdata('nis'), 'Mei') ?> </td>
+                                    <td><?= $this->keuangan_model->cetakKwitansi($this->session->userdata('nis'), 'Mei') ?> </td>
                                 </tr>
                                 <tr>
                                     <td width="100"><?= $this->keuangan_model->cekTglBayar($this->session->userdata('nis'), 'Juni') ?></td>
                                     <td width="400">Juni</td>
                                     <td><?= $this->keuangan_model->cekJmlBayar($this->session->userdata('nis'), 'Juni') ?> </td>
+                                    <td><?= $this->keuangan_model->cetakKwitansi($this->session->userdata('nis'), 'Juni') ?> </td>
                                 </tr>
                                 <tr>
                                     <td width="100"><?= $this->keuangan_model->cekTglBayar($this->session->userdata('nis'), 'Juli') ?></td>
                                     <td width="400">Juli</td>
                                     <td><?= $this->keuangan_model->cekJmlBayar($this->session->userdata('nis'), 'Juli') ?> </td>
+                                    <td><?= $this->keuangan_model->cetakKwitansi($this->session->userdata('nis'), 'Juli') ?> </td>
                                 </tr>
                                 <tr>
                                     <td width="100"><?= $this->keuangan_model->cekTglBayar($this->session->userdata('nis'), 'Agustus') ?></td>
                                     <td width="400">Agustus</td>
                                     <td><?= $this->keuangan_model->cekJmlBayar($this->session->userdata('nis'), 'Agustus') ?> </td>
+                                    <td><?= $this->keuangan_model->cetakKwitansi($this->session->userdata('nis'), 'Agustus') ?> </td>
                                 </tr>
                                 <tr>
                                     <td width="100"><?= $this->keuangan_model->cekTglBayar($this->session->userdata('nis'), 'September') ?></td>
                                     <td width="400">September</td>
                                     <td><?= $this->keuangan_model->cekJmlBayar($this->session->userdata('nis'), 'September') ?> </td>
+                                    <td><?= $this->keuangan_model->cetakKwitansi($this->session->userdata('nis'), 'September') ?> </td>
                                 </tr>
                                 <tr>
                                     <td width="100"><?= $this->keuangan_model->cekTglBayar($this->session->userdata('nis'), 'Oktober') ?></td>
                                     <td width="400">Oktober</td>
                                     <td><?= $this->keuangan_model->cekJmlBayar($this->session->userdata('nis'), 'Oktober') ?> </td>
+                                    <td><?= $this->keuangan_model->cetakKwitansi($this->session->userdata('nis'), 'Oktober') ?> </td>
                                 </tr>
                                 <tr>
                                     <td width="100"><?= $this->keuangan_model->cekTglBayar($this->session->userdata('nis'), 'November') ?></td>
                                     <td width="400">November</td>
                                     <td><?= $this->keuangan_model->cekJmlBayar($this->session->userdata('nis'), 'November') ?> </td>
+                                    <td><?= $this->keuangan_model->cetakKwitansi($this->session->userdata('nis'), 'November') ?> </td>
                                 </tr>
                                 <tr>
                                     <td width="100"><?= $this->keuangan_model->cekTglBayar($this->session->userdata('nis'), 'Desember') ?></td>
                                     <td width="400">Desember</td>
                                     <td><?= $this->keuangan_model->cekJmlBayar($this->session->userdata('nis'), 'Desember') ?> </td>
+                                    <td><?= $this->keuangan_model->cetakKwitansi($this->session->userdata('nis'), 'Desember') ?> </td>
                                 </tr>
 
                             </table>

@@ -49,12 +49,23 @@
                                 <?php } ?>
                             </select>
                         </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="konigtif">Konigtif</label>
+                            <input type="text" class="form-control" name="konigtif" id="konigtif" placeholder="Input Konigtif">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="konigtif">Psikomotor</label>
+                            <input type="text" class="form-control" name="psikomotor" id="psikomotor" placeholder="Input Psikomotor">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="konigtif">Afektif</label>
+                            <input type="text" class="form-control" name="afektif" id="afektif" placeholder="Input Afektif">
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="tahun_akademik">Nilai</label>
-                        <input type="text" class="form-control" name="nilai" id="nilai" placeholder="Input Nilai">
-                    </div>
 
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary btn-small">Simpan</button>
