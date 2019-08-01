@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+<!-- new -->
 	<div class="wrapper">
 		<div class="container">
 			<h1>SMA Al-Husna Tangerang</h1><br>

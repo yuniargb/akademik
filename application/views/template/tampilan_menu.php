@@ -88,7 +88,6 @@
       ?>
       <li><a href="<?php echo base_url(); ?>index.php/user/form_password"><i class="fa fa-edit"></i> Ubah Password</a></li>
 
-
   </section>
   <!-- /.sidebar -->
 </aside>
