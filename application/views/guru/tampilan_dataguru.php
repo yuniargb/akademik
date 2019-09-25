@@ -21,8 +21,9 @@
               <br>
               <br>
 
-
-              <table id="example" class="table table-striped table-bordered table-hover">
+              <div class="table-responsive">
+                
+              <table id="example" class="table table-striped table-bordered table-hover ">
                 <thead>
                   <tr>
                     <th>Nip</th>
@@ -71,6 +72,7 @@
                 ?>
 
               </table>
+              </div>
             </div>
           </div>
         </div>

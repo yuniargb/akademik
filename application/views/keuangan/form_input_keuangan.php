@@ -41,8 +41,8 @@
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="tahun_akademik">Jumlah yang harus dibayar</label>
-                            <input type="text" class="form-control" name="bayar" id="bayar" placeholder="Pilih Siswa" readonly>
+                            <label for="tahun_akademik">Jumlah bayar</label>
+                            <input type="text" class="form-control" name="bayar" id="aasd" placeholder="Masukan Jumlah Pembayaran" >
                         </div>
                     </div>
 

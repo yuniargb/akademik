@@ -63,7 +63,7 @@ class Keuangan extends CI_Controller
 		$html = ob_get_contents();
 		ob_end_clean();
 
-		require_once('./assets/html2pdf/html2pdf.class.php');
+		include_once('./assets/html2pdf/html2pdf.class.php');
 		$pdf = new HTML2PDF('P', 'A4', 'en');
 		$pdf->WriteHTML($html);
 		$pdf->Output('pemesanan-' . $tanggal . '.pdf');

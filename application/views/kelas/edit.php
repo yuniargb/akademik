@@ -30,24 +30,26 @@
             <label for="nama_kelas">Nama kelas</label><br>
             <input type="text" class="form-control" name="nama_kelas" value="<?php echo $result['nama_kelas'] ?>"> </td>
           </div>
+          <input type="hidden" class="form-control" name="bayaran" id="bayaran">
+          <input type="hidden" class="form-control" name="jurusan" id="bayaran">
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="bayaran">Jumlah Bayaran</label>
             <input type="number" class="form-control" name="bayaran" id="bayaran" value="<?php echo $result['bayaran'] ?>" placeholder="Jumlah Bayaran">
           </div>
-
+          
           <div class="form-group">
             <label for="tahun_akademik">Jurusan</label>
-            <!-- <input type="text" class="form-control" name="id_tahun" id="id_tahun" placeholder="id yahun"> -->
+            <input type="text" class="form-control" name="id_tahun" id="id_tahun" placeholder="id yahun">
             <select name="jurusan" id="jurusan" class="form-control" required>
               <option value="">-- PILIH JURUSAN --</option>
               <?php foreach ($jurusan as $t) { ?>
                 <option value="<?= $t['id_jurusan'] ?>" <?php if ($result['id_jurusan'] == $t['id_jurusan']) {
-                                                          echo "selected";
-                                                        } ?>><?= $t['nama_jurusan'] ?></option>
+                                                            echo "selected";
+                                                          } ?>><?= $t['nama_jurusan'] ?></option>
               <?php } ?>
             </select>
-          </div>
+          </div> -->
 
           <div class="form-group">
             <label for="tahun_akademik">Tahun Ajaran</label>
@@ -56,8 +58,8 @@
               <option value="">-- PILIH TAHUN AKADEMIK --</option>
               <?php foreach ($tahun as $t) { ?>
                 <option value="<?= $t['id_tahun'] ?>" <?php if ($result['id_tahun'] == $t['id_tahun']) {
-                                                        echo "selected";
-                                                      } ?>><?= $t['tahun_akademik'] ?></option>
+                                                          echo "selected";
+                                                        } ?>><?= $t['tahun_akademik'] ?></option>
               <?php } ?>
             </select>
           </div>

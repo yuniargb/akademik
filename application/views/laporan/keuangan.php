@@ -113,10 +113,10 @@
 <body>
     <div class="body">
         <div class="head">
-            <img src="https://alhusnakotatangerang.com/wp-content/uploads/2018/11/Logo-Al-Husna.png" alt="" width="120" height="100" class="img-fluid">
+            <img src="https://www.pinclipart.com/picdir/middle/402-4023169_free-download-logo-kampus-universitas-format-png-.png" alt="" width="120" height="100" class="img-fluid">
             <h2>LAPORAN KEUANGAN</h2>
-            <h2>SMA Al-Husna Tangerang</h2>
-            <p>Jl. A. Damyati No.43-45, RT.6/RW.7, Sukarasa, Kec. Tangerang, Kota Tangerang, Banten 15111</p>
+            <h2>SDN NEGERI 113 MANADO</h2>
+            <p>Jl. Sulawesi NO 5. KELURAHAN BATU KOTA KECAMATAN MALALAYANG</p>
         </div>
         <table class="table-custom" align="center" style="width: 1000px;">
             <thead>
@@ -144,7 +144,7 @@
                         <td><?= $value->pembayaran ?></td>
                         <td>Rp. <?= number_format($value->bayar, 0, ",", ".") ?></td>
                     </tr>
-                    <?php $no++;
+                <?php $no++;
                 endforeach ?>
             </tbody>
         </table>

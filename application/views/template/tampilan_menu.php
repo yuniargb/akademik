@@ -45,7 +45,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>index.php/jurusan/"><i class="fa fa-circle-o"></i> jurusan</a></li>
+            <!-- <li><a href="<?php echo base_url(); ?>index.php/jurusan/"><i class="fa fa-circle-o"></i> jurusan</a></li> -->
             <li><a href="<?php echo base_url(); ?>index.php/tahun_akademik/"><i class="fa fa-circle-o"></i> Tahun Akademik</a></li>
             <li><a href="<?php echo base_url(); ?>index.php/kelas/"><i class="fa fa-circle-o"></i> Kelas</a></li>
             <li><a href="<?php echo base_url(); ?>index.php/guru/"><i class="fa fa-circle-o"></i> Guru</a></li>
@@ -78,7 +78,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?= base_url(); ?>index.php/laporan/periode/"><i class="fa fa-circle-o"></i> Laporan Keuangan</a></li>
+            <!-- <li><a href="<?= base_url(); ?>index.php/laporan/periode/"><i class="fa fa-circle-o"></i> Laporan Keuangan</a></li> -->
             <li><a href="<?= base_url(); ?>index.php/laporan/kelas/"><i class="fa fa-circle-o"></i> Laporan Nilai</a></li>
             <!-- <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Laporan Nilai</a></li> -->
           </ul>

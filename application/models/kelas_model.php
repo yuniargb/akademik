@@ -17,10 +17,9 @@ class Kelas_model extends CI_Model
 
     public function get_data()
     {
-        $sql = "SELECT k.id_kelas, k.nama_kelas, k.id_tahun,k.bayaran,t.tahun_akademik,j.nama_jurusan  
+        $sql = "SELECT k.id_kelas, k.nama_kelas, k.id_tahun,k.bayaran,t.tahun_akademik  
         FROM kelas k 
-        INNER JOIN tahun_akademik t ON k.id_tahun=t.id_tahun
-        INNER JOIN jurusan j ON k.id_jurusan=j.id_jurusan";
+        INNER JOIN tahun_akademik t ON k.id_tahun=t.id_tahun";
 
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {

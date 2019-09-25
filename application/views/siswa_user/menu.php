@@ -17,7 +17,7 @@
 
       <li><a href="<?php echo base_url(); ?>index.php/siswa/profil/"><i class="fa fa-user"></i> Profile</a></li>
       <li><a href="<?php echo base_url(); ?>index.php/nilai/ceknilai/"><i class="fa fa-circle-o"></i> Nilai</a></li>
-      <li><a href="<?php echo base_url(); ?>index.php/keuangan/cekkeuangan/"><i class="fa fa-circle-o"></i> Keuangan</a></li>
+      <!-- <li><a href="<?php echo base_url(); ?>index.php/keuangan/cekkeuangan/"><i class="fa fa-circle-o"></i> Keuangan</a></li> -->
       <li><a href="<?php echo base_url(); ?>index.php/jadwal/cekjadwal/"><i class="fa fa-circle-o"></i> Jadwal</a></li>
       <li><a href="<?php echo base_url(); ?>index.php/siswa/form_password/"><i class="fa fa-key"></i> Ubah Password</a></li>
 

@@ -34,8 +34,8 @@
                 <tr>
                   <th>ID kelas</th>
                   <th>Nama kelas</th>
-                  <th>Jurusan</th>
-                  <th>Bayaran</th>
+                  <!-- <th>Jurusan</th> -->
+                  <!-- <th>Bayaran</th> -->
                   <th>Tahun Ajaran</th>
                   <th class="text-center">Kelola</th>
                 </tr>
@@ -46,8 +46,8 @@
                   <tr>
                     <td><?php echo $value['id_kelas']; ?></td>
                     <td><?php echo $value['nama_kelas']; ?></td>
-                    <td><?php echo $value['nama_jurusan']; ?></td>
-                    <td><?php echo $value['bayaran']; ?></td>
+                    <!-- <td><?php echo $value['nama_jurusan']; ?></td> -->
+                    <!-- <td><?php echo $value['bayaran']; ?></td> -->
                     <td><?php echo $value['tahun_akademik']; ?></td>
                     <td class="text-center">
                       <a class="btn btn-warning" href="<?php echo base_url() ?>index.php/kelas/edit/<?php echo $value['id_kelas'];  ?>">

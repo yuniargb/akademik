@@ -113,10 +113,10 @@
 <body>
     <div class="body">
         <div class="head">
-            <img src="https://alhusnakotatangerang.com/wp-content/uploads/2018/11/Logo-Al-Husna.png" alt="" width="120" height="100" class="img-fluid">
+            <img src="<?= base_url('assets/logo3.png') ?>" alt="" width="120" height="100" class="img-fluid">
             <h2>LAPORAN NILAI</h2>
-            <h2>SMA Al-Husna Tangerang</h2>
-            <p>Jl. A. Damyati No.43-45, RT.6/RW.7, Sukarasa, Kec. Tangerang, Kota Tangerang, Banten 15111</p>
+            <h2>SDN NEGERI 113 MANADO</h2>
+            <p>Jl. Sulawesi NO 5. KELURAHAN BATU KOTA KECAMATAN MALALAYANG</p>
         </div>
         <table class="table-custom" align="center" style="width: 1000px;">
             <tr>

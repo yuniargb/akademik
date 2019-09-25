@@ -31,21 +31,25 @@
             <input type="text" class="form-control" name="nama_kelas" id="nama_kelas" placeholder="nama kelas">
           </div>
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="bayaran">Jumlah Bayaran</label>
-            <input type="number" class="form-control" name="bayaran" id="bayaran" placeholder="Jumlah Bayaran">
-          </div>
+            <input type="hidden" class="form-control" name="bayaran" id="bayaran" placeholder="Jumlah Bayaran">
+          </div> -->
+          <input type="hidden" class="form-control" name="bayaran" id="bayaran" placeholder="Jumlah Bayaran">
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="tahun_akademik">Jurusan</label>
-            <!-- <input type="text" class="form-control" name="id_tahun" id="id_tahun" placeholder="id yahun"> -->
+            <input type="hidden" name="jurusan" id="jurusan" class="form-control" required>
             <select name="jurusan" id="jurusan" class="form-control" required>
               <option value="">-- PILIH JURUSAN --</option>
               <?php foreach ($jurusan as $t) { ?>
                 <option value="<?= $t['id_jurusan'] ?>"><?= $t['nama_jurusan'] ?></option>
               <?php } ?>
             </select>
-          </div>
+          </div> -->
+
+          <input type="hidden" name="jurusan" id="jurusan" class="form-control">
+
 
           <div class="form-group">
             <label for="tahun_akademik">Tahun Ajaran</label>

@@ -14,10 +14,10 @@
 </head>
 
 <body>
-<!-- new -->
+	<!-- new -->
 	<div class="wrapper">
 		<div class="container">
-			<h1>SMA Al-Husna Tangerang</h1><br>
+			<h1>SDN NEGERI 113 MANADO</h1><br>
 			<h1>Silahkan Login</h1>
 
 
