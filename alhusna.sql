@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2019 at 06:31 AM
+-- Generation Time: Sep 25, 2019 at 07:15 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -66,10 +66,7 @@ CREATE TABLE `guru` (
 --
 
 INSERT INTO `guru` (`nip`, `nama_guru`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `jenis_kelamin`, `id_agama`, `jabatan`, `no_telp`, `email`, `password`) VALUES
-('123098', 'asd', 'Tangerang', '2019-09-22', 'Kyaimaja', 'laki-laki', '123', 'WAKASEK', '8855455', 'ygbachri@gmail.com', '209d439cb668c11fc8657c4d90dee1d2'),
-('1234567', 'Yuniar giffari Bachri', 'Tangerang', '2019-07-26', 'Kyaimaja', 'laki-laki', '123', 'WAKASEK', '8855455', 'fia@gmail.com', '4f46e6bb6c822c2a9e9c7a9b4d6c48aa'),
-('1234568', 'Lutfia', 'Tangerang', '2019-07-27', 'Kyaimaja', 'laki-laki', '123', 'WAKASEK', '8855455', 'agiffals@yahoo.com', 'fe743d8d97aa7dfc6c93ccdc2e749513'),
-('1504030043', 'dede', 'Tangerang', '2021-02-03', 'Kyaimajagggggggggggg', 'laki-laki', '123', 'admin', '67890', 'dedefghj@gmail.com', '1540ee12b2229cf2780fb89aa09658fa');
+('123141', 'Yuniar giffari Bachri', 'Tangerang', '2019-09-26', 'Kyaimaja', 'perempuan', '124', 'pembantu', '8855455', 'ygbachri@gmail.com', 'd29a5b3658b33ffea934f10e8b7cd9e7');
 
 -- --------------------------------------------------------
 
@@ -93,12 +90,7 @@ CREATE TABLE `jadwal` (
 --
 
 INSERT INTO `jadwal` (`id_jadwal`, `id_tahun`, `kelas`, `id_mapel`, `nip`, `jam`, `ruangan`, `hari`) VALUES
-(4, 2, '3', 'b.ing', '1234567', '19.00-06-00', 'xi', 'Selasa'),
-(5, 1, '3', '1', '1234568', '19.00-06-00', 'xi', 'Sabtu'),
-(6, 1, '2', 'b.indo', '1234567', '19.00-06-00', 'xi', 'Senin'),
-(7, 2, '3', 'b.ing', '1504030043', '12.00-11.00', 'x', 'Selasa'),
-(8, 1, '3', 'b.indo', '1504030043', '12.00-11.00', 'xi', 'Senin'),
-(9, 1, '3', '1', '123098', '19.00-06-00', 'xi', 'Senin');
+(16, 1, '4', '1', '123141', '19.00-06-00', 'x', 'Selasa');
 
 -- --------------------------------------------------------
 
@@ -218,7 +210,8 @@ INSERT INTO `nilai` (`id_nilai`, `nis`, `id_mapel`, `nip`, `konigtif`, `psikomot
 (4, 1000001, 'b.indo', '1234567', 30, 20, 10),
 (5, 1504030044, 'b.ing', '1504030043', 10, 20, 10),
 (6, 1504030044, 'b.indo', '1504030043', 30, 20, 10),
-(7, 123455, '1', '123098', 80, 80, 80);
+(7, 123455, '1', '123098', 80, 80, 80),
+(8, 100000, '1', '123141', 10, 20, 10);
 
 -- --------------------------------------------------------
 
@@ -270,13 +263,8 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`nis`, `password`, `nama_siswa`, `alamat`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `email`, `no_telpon`, `golongan_darah`, `nama_ayah`, `nama_ibu`, `asal_sekolah`, `id_kelas`) VALUES
-(123123, '4297f44b13955235245b2497399d7a93', 'Yuniar giffari Bachri', 'asdasd', 'Tangerang', '2019-07-08', 'perempuan', '2', 'fia@gmail.com', '8855455', 'O', '23', '123', 'tangerang', 0),
-(123455, '00c66aaf5f2c3f49946f15c1ad2ea0d3', 'dwikyrarung', 'd', 'manado', '2019-09-03', 'laki-laki', '123', 'dwikyrarung@gmail.com', '0874374374', 'AB', 'd', 'd', 'smk', 3),
-(321321, '3d186804534370c3c817db0563f0e461', 'Yuniar giffari Bachri', 'Kyaimaja', 'Tangerang', '2019-09-30', 'perempuan', '123', 'ygbachri@gmail.com', '8855455', 'O', '23', '123', 'sman 4 tangerang', 3),
-(1000001, '59e711d152de7bec7304a8c2ecaf9f0f', 'Bachri Y', 'tangerang', 'Tangerang', '2019-07-25', 'perempuan', '123', 'agiffals@yahoo.com', '123123', 'AB', 'sjaiful', 'sumiati', 'sman 4 tangerang', 3),
-(1000002, '4f46e6bb6c822c2a9e9c7a9b4d6c48aa', 'Yuniar giffari Bachri', 'tangerang', 'Tangerang', '2019-07-25', 'laki-laki', '123', 'agiffals@yahoo.com', '8855455', 'AB', 'sjaiful', 'sumiati', 'sman 4 tangerang', 2),
-(1000004, 'f68ec4f0c6df90137749af75a929a3eb', 'Yuniar giffari Bachris', 'Kyaimaja', 'Tangerang', '2019-07-27', 'laki-laki', '124', 'whyhertanto97@gmail.', '8855455', 'O', '23', 'sumiati', 'sman 4 tangerang', 2),
-(1504030044, '8070b0b01d9042fdbc54f095bd2832ef', 'Elisa', 'asd', 'Tangerang', '2021-03-29', 'perempuan', '123', 'elisadian05@gmail.com', '09876', 'AB', 'aaa', 'sss', 'smkn 7tangerang', 3);
+(100000, '14ee22eaba297944c96afdbe5b16c65b', 'Yuniar giffari Bachri', 'Kyaimaja', 'Tangerang', '2019-09-27', 'perempuan', '124', 'bachriy@gmail.com', 'Yuniar giffari ', 'O', 'sjaiful', 'sumiati', '', 4),
+(123123, '4297f44b13955235245b2497399d7a93', 'Yuniar giffari Bachri', 'asdasd', 'Tangerang', '2019-07-08', 'perempuan', '2', 'fia@gmail.com', '8855455', 'O', '23', '123', 'tangerang', 0);
 
 -- --------------------------------------------------------
 
@@ -418,7 +406,7 @@ ALTER TABLE `agama`
 -- AUTO_INCREMENT for table `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `jurusan`
@@ -442,7 +430,7 @@ ALTER TABLE `keuangan`
 -- AUTO_INCREMENT for table `nilai`
 --
 ALTER TABLE `nilai`
-  MODIFY `id_nilai` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_nilai` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `siswa`
